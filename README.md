@@ -13,7 +13,7 @@ Paste the GitHub repository url into the Install from URL tab of the Extension m
 Restart the Web UI to activate the extension.
 
 # How to use
-The accordion widget will display a screen indicating the current model hash and embeds directory. Use the **Create** button to automatically create a folder structure for the current model hash.
+The accordion widget appearing at the bottom of the txt2img and img2img tabs will display a screen indicating the current model hash and embeds directory. Use the **Create** button to automatically create a folder structure for the current model hash.
 
 <img width="613" alt="image" src="https://user-images.githubusercontent.com/122644869/216803099-239f1370-3070-4255-beee-2656586f25c9.png">
 
