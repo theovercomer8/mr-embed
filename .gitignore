@@ -1,0 +1,6 @@
+__pycache__
+.vscode
+embeddings/**/*
+!embeddings/*.txt
+*.code-workspace
+.DS_Store
