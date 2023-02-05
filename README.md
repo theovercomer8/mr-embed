@@ -1,5 +1,5 @@
 # Mr. Embed
-Embed Manager for Automatic1111 Web UI
+Embed Magic for Automatic1111 Web UI
 
 This extension allows model creators to release packs of embeds for a model. 
 
