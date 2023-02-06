@@ -10,6 +10,7 @@ scripts_dir = scripts.basedir()
 embeds_dir = os.path.join(scripts_dir,'embeddings')
 enabled_embeds = []
 hooked_func = None
+hooked = False
 
 def embeds_for_model(hash):
     positive = []
@@ -103,7 +104,7 @@ class Script(scripts.Script):
         return [is_enabled]
     
     def process(self, p, is_enabled):
-        global enabled_embeds, hooked_func
+        global enabled_embeds, hooked_func, hooked
         if not is_enabled:
             return
 
@@ -184,9 +185,11 @@ class Script(scripts.Script):
             return embedding, l
                 
         modules.sd_hijack.model_hijack.embedding_db.find_embedding_at_position = hijacked_embedding
+        hooked = True
                 
     def postprocess(self, p, processed, *args):
-        modules.sd_hijack.model_hijack.embedding_db.find_embedding_at_position = hooked_func
+        if hooked and hooked_func is not None:
+            modules.sd_hijack.model_hijack.embedding_db.find_embedding_at_position = hooked_func
        
 
 
