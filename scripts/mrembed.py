@@ -188,8 +188,11 @@ class Script(scripts.Script):
         hooked = True
                 
     def postprocess(self, p, processed, *args):
+        global hooked, hooked_func
         if hooked and hooked_func is not None:
             modules.sd_hijack.model_hijack.embedding_db.find_embedding_at_position = hooked_func
+            hooked = False
+            hooked_func = None
        
 
 
