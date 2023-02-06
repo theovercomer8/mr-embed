@@ -144,7 +144,7 @@ class Script(scripts.Script):
             matches = re.search(exp,s)
             return float(matches.group(1)) if matches is not None else 0
             
-        def new_prompt(prompt:str,start:list|None,end:list|None,other:list|None):
+        def new_prompt(prompt,start,end,other):
             prompt = f"{', '.join(start)}, {prompt}" if start is not None and len(start) > 0 else prompt
             prompt = f"{prompt}, {', '.join(other)}" if other is not None and len(other) > 0 else prompt
             prompt = f"{prompt}, {', '.join(end)}" if end is not None and len(end) > 0 else prompt
